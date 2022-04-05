@@ -1,0 +1,46 @@
+{
+  "name": "celery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "dependencies": {
+    "@openzeppelin/contracts": "4.3.2",
+    "prb-math": "2.2.0",
+    "solc": "0.8.4"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "2.0.2",
+    "@nomiclabs/hardhat-waffle": "2.0.1",
+    "chai": "4.3.4",
+    "eslint": "7.32.0",
+    "eslint-plugin-only-warn": "1.0.3",
+    "ethereum-waffle": "3.4.0",
+    "ethers": "5.4.6",
+    "hardhat": "2.6.2",
+    "prettier": "2.3.2",
+    "prettier-plugin-solidity": "1.0.0-beta.17",
+    "solidity-coverage": "0.7.17"
+  },
+  "scripts": {
+    "lint": "solhint \"contracts/**/*.sol\" --fix && npx eslint \"test/*.js\" --fix",
+    "build": "npm run lint && npx hardhat compile",
+    "test": "npm run lint && npx hardhat test",
+    "coverage": "npm run lint && npx hardhat coverage",
+    "deploylocaltestnet": "npm run build && npx hardhat run --network localtestnet scripts/deploy.js",
+    "deploytestnet": "npm run build && npx hardhat run --network testnet scripts/deploy.js",
+    "deploymainnet": "npm run build && npx hardhat run --network mainnet scripts/deploy.js",
+    "deploytokensalelocaltestnet": "npm run build && npx hardhat run --network localtestnet scripts/deployTokenSale.js",
+    "deploytokensaletestnet": "npm run build && npx hardhat run --network testnet scripts/deployTokenSale.js",
+    "deploytokensalemainnet": "npm run build && npx hardhat run --network mainnet scripts/deployTokenSale.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxHastings/FixedAnnuityStaking.git"
+  },
+  "author": "",
+  "license": "Closed Source Private",
+  "bugs": {
+    "url": "https://github.com/MaxHastings/FixedAnnuityStaking/issues"
+  },
+  "homepage": "https://github.com/MaxHastings/FixedAnnuityStaking#readme"
+}
